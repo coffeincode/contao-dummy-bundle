@@ -1,0 +1,19 @@
+<?php
+
+
+namespace Coffeincode\ContaoDummyBundle\ContaoManager;
+
+use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
+use Contao\ManagerPlugin\Bundle\Config\BundleConfig;
+use Contao\ManagerPlugin\Bundle\Parser\ParserInterface;
+use Contao\CoreBundle\ContaoCoreBundle;
+use Coffeincode\ContaoDummyeBundle\ContaoDummyBundle;
+
+class Plugin implements BundlePluginInterface {
+	public function getBundles(ParserInterface $parser) : array{
+		return [
+			BundleConfig::create(ContaoDummyBundle::class)->setLoadAfter([ContaoCoreBundle::class]),
+		];
+	}
+
+}

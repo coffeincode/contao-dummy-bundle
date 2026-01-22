@@ -1,0 +1,24 @@
+{
+  "name": "coffeincode/contao-dummy-bundle",
+  "type": "contao-bundle",
+  "description": "Dummy for 5.3",
+  "license": "Apache",
+  "authors": [
+    {
+      "name": "Marina",
+      "role": "Developer"
+    }
+  ],
+  "require": {
+    "php": "^8.3",
+    "contao/core-bundle": "^5.3"
+  },
+  "autoload": {
+    "psr-4": {
+      "Coffeincode\\ContaoDummyBundle\\": "src/"
+    }
+  },
+  "extra": {
+    "contao-manager-plugin": "Coffeincode\\ContaoDummyBundle\\ContaoManager\\Plugin"
+  }
+}
