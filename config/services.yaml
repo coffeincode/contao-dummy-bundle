@@ -1,0 +1,12 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+
+    Coffeincode\ContaoDummyBundle\:
+        resource: '../src/*'
+        exclude: '../src/{ContaoManager,DependencyInjection,ContaoDummyBundle.php}'
+
+    Coffeincode\ContaoDummyBundle\EventListener\DataContainer\DummyItemLabelCallback:
+        tags:
+            - { name: contao.callback, table: tl_dummy_item, target: list.label.label_callback, method: __invoke }

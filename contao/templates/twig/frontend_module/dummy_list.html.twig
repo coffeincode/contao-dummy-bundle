@@ -1,0 +1,26 @@
+
+
+
+
+{% block content %}
+{% if headline is defined and headline.text %}
+  <{{ headline.tag_name|default('h2') }}>{{ headline.text }}</{{ headline.tag_name|default('h2') }}>
+{% endif %}
+<h1>ich bin der fallback!</h1>
+{% if archive %}
+  <h3>{{ archive.dummy_archive_name }}</h3>
+{% endif %}
+
+{% if items is not empty %}
+  <ul class="dummy-items">
+    {% for item in items %}
+      <li>
+        <span class="dummy-item-id">#{{ item.id }}</span>
+        <span class="dummy-item-headline">{{ item.headline }}</span>
+      </li>
+    {% endfor %}
+  </ul>
+{% else %}
+  <p class="dummy-items-empty">No items found.</p>
+{% endif %}
+{% endblock %}
